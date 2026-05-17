@@ -1,1 +1,1578 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <title>Mövenpick Na Jomtien Siam Pattaya | 5 звёзд</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --dark-green: #1a2f24;
+            --medium-green: #1e3c2f;
+            --light-green: #2c5a3e;
+            --gold: #c4a962;
+            --cream: #f9f8f6;
+            --white: #ffffff;
+            --text: #2c2c2c;
+            --text-light: #5e6b5e;
+            --border: #e8dfd3;
+            --shadow: 0 20px 45px rgba(0, 0, 0, 0.05);
+        }
 
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--cream);
+            color: var(--text);
+            line-height: 1.5;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, .serif {
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* ===== НАВИГАЦИЯ ===== */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.94);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            z-index: 1000;
+            border-bottom: 1px solid var(--border);
+            padding: 0.9rem 0;
+            transition: all 0.3s ease;
+        }
+
+        .navbar.scrolled {
+            padding: 0.6rem 0;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+        }
+
+        .nav-inner {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: var(--dark-green);
+            text-decoration: none;
+            letter-spacing: 0.5px;
+            transition: color 0.3s;
+        }
+
+        .nav-logo:hover {
+            color: var(--light-green);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            align-items: center;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text);
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: all 0.3s;
+            letter-spacing: 0.3px;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--dark-green);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after,
+        .nav-links a.active::after {
+            width: 100%;
+        }
+
+        .nav-links a.active {
+            color: var(--dark-green);
+            font-weight: 700;
+        }
+
+        .btn-book-nav {
+            background: var(--dark-green);
+            color: white !important;
+            padding: 0.6rem 1.6rem !important;
+            border-radius: 40px !important;
+            font-weight: 600 !important;
+            transition: all 0.3s !important;
+        }
+
+        .btn-book-nav:hover {
+            background: var(--light-green) !important;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(30, 60, 47, 0.25);
+        }
+
+        .btn-book-nav::after {
+            display: none !important;
+        }
+
+        /* ===== ГЛАВНЫЙ ЭКРАН ===== */
+        .hero {
+            min-height: 100vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)),
+                url('https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=1920&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center 35%;
+            background-attachment: fixed;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            padding: 2rem 1rem;
+            position: relative;
+        }
+
+        .hero-content {
+            max-width: 850px;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hotel-stars {
+            font-size: 1rem;
+            letter-spacing: 6px;
+            margin-bottom: 1rem;
+            color: var(--gold);
+        }
+
+        .hotel-name {
+            font-size: clamp(2.5rem, 8vw, 5rem);
+            font-weight: 700;
+            letter-spacing: 2px;
+            margin-bottom: 1rem;
+            text-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+            line-height: 1.1;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .welcome-text {
+            font-size: 1.6rem;
+            font-weight: 400;
+            margin-bottom: 1.8rem;
+            font-style: italic;
+            font-family: 'Playfair Display', serif;
+            opacity: 0.95;
+        }
+
+        .short-desc {
+            font-size: 1.2rem;
+            font-weight: 400;
+            max-width: 650px;
+            margin: 0 auto 3rem auto;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 1.3rem 2rem;
+            border-radius: 50px;
+            letter-spacing: 0.3px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            line-height: 1.5;
+        }
+
+        .btn-view {
+            display: inline-block;
+            background: transparent;
+            border: 2px solid white;
+            color: white;
+            font-size: 1.1rem;
+            font-weight: 600;
+            padding: 1rem 3rem;
+            border-radius: 50px;
+            cursor: pointer;
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.08);
+            transition: all 0.4s ease;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            font-family: 'Inter', sans-serif;
+            text-decoration: none;
+        }
+
+        .btn-view:hover {
+            background: white;
+            color: var(--dark-green);
+            border-color: white;
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: bounce 2s infinite;
+            cursor: pointer;
+        }
+
+        .scroll-indicator span {
+            display: block;
+            width: 24px;
+            height: 24px;
+            border-right: 2px solid white;
+            border-bottom: 2px solid white;
+            transform: rotate(45deg);
+            opacity: 0.8;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateX(-50%) translateY(0);
+            }
+            40% {
+                transform: translateX(-50%) translateY(-15px);
+            }
+            60% {
+                transform: translateX(-50%) translateY(-7px);
+            }
+        }
+
+        /* ===== СЕКЦИЯ УСЛУГ ===== */
+        .services-section {
+            padding: 6rem 0 5rem;
+            background: var(--white);
+            position: relative;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-label {
+            display: inline-block;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            color: var(--gold);
+            margin-bottom: 1rem;
+        }
+
+        .section-title {
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: 600;
+            color: var(--dark-green);
+            font-family: 'Playfair Display', serif;
+            margin-bottom: 0.8rem;
+        }
+
+        .section-line {
+            width: 60px;
+            height: 3px;
+            background: var(--gold);
+            margin: 0 auto;
+            border-radius: 2px;
+        }
+
+        .subtitle {
+            color: var(--text-light);
+            font-size: 1.1rem;
+            font-weight: 400;
+            margin-top: 1rem;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 30px;
+        }
+
+        /* Карточки с анимацией появления */
+        .service-card {
+            background: var(--white);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.04);
+            transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            display: flex;
+            flex-direction: column;
+            border: 1px solid #ede7df;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 0.8s ease, transform 0.8s ease, box-shadow 0.4s ease;
+        }
+
+        .service-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.12);
+        }
+
+        .card-img {
+            height: 220px;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            transition: transform 0.6s ease;
+        }
+
+        .service-card:hover .card-img {
+            transform: scale(1.05);
+        }
+
+        .card-category {
+            position: absolute;
+            top: 16px;
+            left: 16px;
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(8px);
+            padding: 6px 18px;
+            border-radius: 30px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: var(--dark-green);
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .card-body {
+            padding: 1.8rem 1.6rem 1.8rem;
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+        }
+
+        .card-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 0.6rem;
+            color: #1e2e1e;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .card-desc {
+            font-size: 0.95rem;
+            color: var(--text-light);
+            margin-bottom: 1.4rem;
+            line-height: 1.6;
+            flex: 1;
+        }
+
+        .card-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.6rem;
+            font-size: 0.9rem;
+            color: #3e4a3e;
+            font-weight: 500;
+        }
+
+        .price {
+            font-weight: 700;
+            font-size: 1.3rem;
+            color: var(--dark-green);
+            font-family: 'Playfair Display', serif;
+        }
+
+        .time-format {
+            background: #f4f1ea;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--dark-green);
+        }
+
+        .btn-book {
+            background: var(--dark-green);
+            color: white;
+            border: none;
+            padding: 0.95rem 1.2rem;
+            border-radius: 40px;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            width: 100%;
+            transition: all 0.3s ease;
+            letter-spacing: 0.5px;
+            font-family: 'Inter', sans-serif;
+            text-transform: uppercase;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-book:hover {
+            background: var(--light-green);
+            box-shadow: 0 12px 25px rgba(30, 60, 47, 0.3);
+            transform: translateY(-2px);
+        }
+
+        /* ===== ФУТЕР ===== */
+        .footer {
+            background: var(--dark-green);
+            color: rgba(255, 255, 255, 0.85);
+            padding: 4rem 0 2rem;
+            position: relative;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-col h4 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            color: white;
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+        }
+
+        .footer-col p {
+            font-size: 0.95rem;
+            line-height: 1.7;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-col ul li a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: all 0.3s;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--gold);
+            padding-left: 5px;
+        }
+
+        .footer-contact p {
+            margin-bottom: 0.7rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.15);
+            padding-top: 2rem;
+            text-align: center;
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        /* ===== АДАПТИВНОСТЬ ===== */
+        @media (max-width: 768px) {
+            .nav-links {
+                gap: 1.2rem;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            .nav-logo {
+                font-size: 1.2rem;
+            }
+            .short-desc {
+                font-size: 1rem;
+                padding: 1rem 1.4rem;
+            }
+            .hero {
+                min-height: 90vh;
+                background-attachment: scroll;
+            }
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+            .services-section {
+                padding: 4rem 0 3rem;
+            }
+            .btn-book-nav {
+                padding: 0.5rem 1.2rem !important;
+                font-size: 0.85rem !important;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .nav-inner {
+                flex-direction: column;
+                gap: 0.8rem;
+            }
+            .nav-links {
+                gap: 1rem;
+                font-size: 0.85rem;
+            }
+            .hotel-name {
+                font-size: 2rem;
+            }
+        }
+        .hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    padding: 2rem 1rem;
+    overflow: hidden;
+}
+
+.hero-bg-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+}
+
+.hero::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.55));
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 850px;
+    animation: fadeInUp 1s ease-out;
+}
+
+.hotel-stars,
+.hotel-name,
+.welcome-text,
+.short-desc,
+.btn-view {
+    position: relative;
+    z-index: 2;
+}
+
+.scroll-indicator {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+}
+/* ===== СЕКЦИЯ НОМЕРОВ ===== */
+.rooms-section {
+    padding: 6rem 0 5rem;
+    background: var(--cream);
+    position: relative;
+}
+
+.rooms-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    gap: 30px;
+}
+
+.room-card {
+    background: var(--white);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.04);
+    transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #ede7df;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.8s ease, transform 0.8s ease, box-shadow 0.4s ease;
+}
+
+.room-card.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.room-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.12);
+}
+
+.room-img {
+    height: 240px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    transition: transform 0.6s ease;
+}
+
+.room-card:hover .room-img {
+    transform: scale(1.05);
+}
+
+.room-category {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(8px);
+    padding: 6px 18px;
+    border-radius: 30px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--dark-green);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.room-category.president {
+    background: rgba(196, 169, 98, 0.9);
+    color: white;
+    letter-spacing: 2px;
+}
+
+.room-body {
+    padding: 1.8rem 1.6rem 1.8rem;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.room-title {
+    font-size: 1.6rem;
+    font-weight: 600;
+    margin-bottom: 0.6rem;
+    color: #1e2e1e;
+    font-family: 'Playfair Display', serif;
+}
+
+.room-desc {
+    font-size: 0.95rem;
+    color: var(--text-light);
+    margin-bottom: 1.2rem;
+    line-height: 1.6;
+    flex: 1;
+}
+
+.room-features {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 1.4rem;
+}
+
+.room-features span {
+    background: #f4f1ea;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--dark-green);
+}
+
+.room-meta {
+    display: flex;
+    align-items: baseline;
+    gap: 4px;
+    margin-bottom: 1.4rem;
+}
+
+.room-price {
+    font-weight: 700;
+    font-size: 1.4rem;
+    color: var(--dark-green);
+    font-family: 'Playfair Display', serif;
+}
+
+.room-night {
+    color: var(--text-light);
+    font-size: 0.9rem;
+}
+/* ===== ГЛАВНЫЙ ЭКРАН С ВИДЕО ===== */
+.hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    padding: 2rem 1rem;
+    overflow: hidden;
+}
+
+.hero-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+    z-index: 0;
+}
+
+/* По умолчанию показываем десктопное видео */
+.hero-video-desktop {
+    display: block;
+}
+
+.hero-video-mobile {
+    display: none;
+}
+
+/* Затемнение */
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6));
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 850px;
+    animation: fadeInUp 1s ease-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hotel-stars {
+    font-size: 1rem;
+    letter-spacing: 6px;
+    margin-bottom: 1rem;
+    color: #c4a962;
+    position: relative;
+    z-index: 2;
+}
+
+.hotel-name {
+    font-size: clamp(2.5rem, 8vw, 5rem);
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 1rem;
+    text-shadow: 0 4px 30px rgba(0, 0, 0, 0.6);
+    line-height: 1.1;
+    font-family: 'Playfair Display', serif;
+    position: relative;
+    z-index: 2;
+}
+
+.welcome-text {
+    font-size: 1.6rem;
+    font-weight: 400;
+    margin-bottom: 1.8rem;
+    font-style: italic;
+    font-family: 'Playfair Display', serif;
+    opacity: 0.95;
+    position: relative;
+    z-index: 2;
+}
+
+.short-desc {
+    font-size: 1.2rem;
+    font-weight: 400;
+    max-width: 650px;
+    margin: 0 auto 3rem auto;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 1.3rem 2rem;
+    border-radius: 50px;
+    letter-spacing: 0.3px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    line-height: 1.5;
+    position: relative;
+    z-index: 2;
+}
+
+.btn-view {
+    display: inline-block;
+    background: transparent;
+    border: 2px solid white;
+    color: white;
+    font-size: 1.1rem;
+    font-weight: 600;
+    padding: 1rem 3rem;
+    border-radius: 50px;
+    cursor: pointer;
+    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.08);
+    transition: all 0.4s ease;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-family: 'Inter', sans-serif;
+    text-decoration: none;
+    position: relative;
+    z-index: 2;
+}
+
+.btn-view:hover {
+    background: white;
+    color: #1a2f24;
+    border-color: white;
+}
+
+.scroll-indicator {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    animation: bounce 2s infinite;
+    cursor: pointer;
+}
+
+.scroll-indicator span {
+    display: block;
+    width: 24px;
+    height: 24px;
+    border-right: 2px solid white;
+    border-bottom: 2px solid white;
+    transform: rotate(45deg);
+    opacity: 0.8;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateX(-50%) translateY(0);
+    }
+    40% {
+        transform: translateX(-50%) translateY(-15px);
+    }
+    60% {
+        transform: translateX(-50%) translateY(-7px);
+    }
+}
+
+/* ===== МОБИЛЬНАЯ ВЕРСИЯ ===== */
+@media (max-width: 768px) {
+    /* Переключаем видео */
+    .hero-video-desktop {
+        display: none;
+    }
+    
+    .hero-video-mobile {
+        display: block;
+    }
+    
+    .hero {
+        min-height: 85vh;
+    }
+    
+    .hotel-name {
+        font-size: 2rem;
+    }
+    
+    .welcome-text {
+        font-size: 1.2rem;
+    }
+    
+    .short-desc {
+        font-size: 0.9rem;
+        padding: 0.8rem 1.2rem;
+    }
+    
+    .btn-view {
+        font-size: 1rem;
+        padding: 0.8rem 2rem;
+    }
+}
+    </style>
+</head>
+<body>
+    <!-- НАВИГАЦИЯ -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-inner">
+            <a href="#home" class="nav-logo">Mövenpick Pattaya</a>
+            <div class="nav-links">
+                <a href="#home" class="active">Главная</a>
+                <a href="#services">Услуги</a>
+                <a href="booking.html" class="btn-book-nav">Бронировать</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ГЛАВНЫЙ ЭКРАН -->
+<!-- ВИДЕО ОТЕЛЯ НА ФОНЕ -->
+<section class="hero" id="home">
+    <!-- Видео для десктопа -->
+    <video class="hero-video hero-video-desktop" autoplay muted loop playsinline>
+        <source src="c:\Users\ilika\Desktop\Project\photo\pccait.mp4" type="video/mp4">
+    </video>
+    
+    <!-- Видео для мобильных (другое) -->
+    <video class="hero-video hero-video-mobile" autoplay muted loop playsinline>
+        <source src="c:\Users\ilika\Desktop\Project\photo\phonecait.mp4" type="video/mp4">
+    </video>
+    
+    <!-- Затемнение поверх видео -->
+    <div class="hero-overlay"></div>
+    
+    <div class="hero-content">
+        <div class="hotel-stars">★★★★★</div>
+        <h1 class="hotel-name">Mövenpick Na Jomtien Siam</h1>
+        <p class="welcome-text">Pattaya · 5 звёзд</p>
+        <p class="short-desc">Welcome to Mövenpick Na Jomtien Siam Pattaya. Discover restaurants, spa, transfers and special experiences in one place.</p>
+        <a href="#rooms" class="btn-view">View rooms & services</a>
+    </div>
+    <div class="scroll-indicator" onclick="document.getElementById('rooms').scrollIntoView({behavior:'smooth'})">
+        <span></span>
+    </div>
+</section>
+
+    <!-- СЕКЦИЯ УСЛУГ -->
+    <section class="services-section" id="services">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Our Experiences</span>
+                <h2 class="section-title">Изысканные услуги</h2>
+                <div class="section-line"></div>
+                <p class="subtitle">Для вашего идеального отдыха</p>
+            </div>
+
+            <div class="services-grid">
+                <!-- Карточка 1: BBQ Dinner by the Sea -->
+                <div class="service-card">
+                    <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1555939594-58d7cb561ad1?q=80&w=800&auto=format&fit=crop');">
+                        <span class="card-category">Dining</span>
+                        <img src="c:\Users\ilika\Desktop\Project\photo\ujin.jpg" height="240" width="400">
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">BBQ Dinner by the Sea</h3>
+                        <p class="card-desc">Premium BBQ dinner near the beach with seafood and sunset atmosphere.</p>
+                        <div class="card-meta">
+                            <span class="price">From 1,500 THB</span>
+                            <span class="time-format">18:00 – 22:00</span>
+                        </div>
+                        <a href="booking.html?service=BBQ+Dinner+by+the+Sea" class="btn-book">Book now</a>
+                    </div>
+                </div>
+
+                <!-- Карточка 2: SPA Relax Package -->
+                <div class="service-card">
+                    <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1544161515-4ab6ce6db874?q=80&w=800&auto=format&fit=crop');">
+                        <span class="card-category">Wellness</span>
+                        <img src="c:\Users\ilika\Desktop\Project\photo\spa.jpg" height="240" width="400">
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">SPA Relax Package</h3>
+                        <p class="card-desc">Расслабляющие SPA-процедуры с аромамаслами и массажем всего тела.</p>
+                        <div class="card-meta">
+                            <span class="price">From 2,200 THB</span>
+                            <span class="time-format">90 минут</span>
+                        </div>
+                        <a href="booking.html?service=SPA+Relax+Package" class="btn-book">Book now</a>
+                    </div>
+                </div>
+
+                <!-- Карточка 3: Airport Transfer -->
+                <div class="service-card">
+                    <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1519167758481-83f550bb49b3?q=80&w=800&auto=format&fit=crop');">
+                        <span class="card-category">Transfer</span>
+                        <img src="c:\Users\ilika\Desktop\Project\photo\transfer.jpeg" height="240" width="400">
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">Airport Transfer</h3>
+                        <p class="card-desc">Комфортный трансфер из аэропорта на премиальном автомобиле.</p>
+                        <div class="card-meta">
+                            <span class="price">From 1,200 THB</span>
+                            <span class="time-format">По запросу</span>
+                        </div>
+                        <a href="booking.html?service=Airport+Transfer" class="btn-book">Book now</a>
+                    </div>
+                </div>
+
+                <!-- Карточка 4: Kids Club Activities -->
+                <div class="service-card">
+                    <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1596464716127-f2a82984de30?q=80&w=800&auto=format&fit=crop');">
+                        <span class="card-category">Family</span>
+                        <img src="c:\Users\ilika\Desktop\Project\photo\nana.jpg" height="240" width="400">
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">Kids Club Activities</h3>
+                        <p class="card-desc">Весёлые и безопасные активности для детей под присмотром профессионалов.</p>
+                        <div class="card-meta">
+                            <span class="price">From 800 THB</span>
+                            <span class="time-format">10:00 – 17:00</span>
+                        </div>
+                        <a href="booking.html?service=Kids+Club+Activities" class="btn-book">Book now</a>
+                    </div>
+                </div>
+
+                <!-- Карточка 5: Romantic Dinner -->
+                <div class="service-card">
+                    <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1414235077428-338989a2e8c0?q=80&w=800&auto=format&fit=crop');">
+                        <span class="card-category">Romance</span>
+                        <img src="c:\Users\ilika\Desktop\Project\photo\romantic.jpg" height="240" width="400">
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">Romantic Dinner</h3>
+                        <p class="card-desc">Эксклюзивный романтический ужин при свечах с видом на закат.</p>
+                        <div class="card-meta">
+                            <span class="price">From 3,000 THB</span>
+                            <span class="time-format">19:00 – 23:00</span>
+                        </div>
+                        <a href="booking.html?service=Romantic+Dinner" class="btn-book">Book now</a>
+                    </div>
+                </div>
+
+                <!-- Карточка 6: Local Tour Experience -->
+                <div class="service-card">
+                    <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1528181304800-259b08848526?q=80&w=800&auto=format&fit=crop');">
+                        <span class="card-category">Excursion</span>
+                        <img src="c:\Users\ilika\Desktop\Project\photo\progulka.jpg" height="240" width="400">
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">Local Tour Experience</h3>
+                        <p class="card-desc">Уникальная локальная экскурсия по самым живописным местам региона.</p>
+                        <div class="card-meta">
+                            <span class="price">From 1,800 THB</span>
+                            <span class="time-format">4 часа</span>
+                        </div>
+                        <a href="booking.html?service=Local+Tour+Experience" class="btn-book">Book now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- СЕКЦИЯ НОМЕРОВ -->
+<section class="rooms-section" id="rooms">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-label">Accommodation</span>
+            <h2 class="section-title">Наши номера</h2>
+            <div class="section-line"></div>
+            <p class="subtitle">Выберите идеальный номер для вашего отдыха</p>
+        </div>
+
+        <div class="rooms-grid">
+            <!-- Эконом -->
+            <div class="room-card">
+                <div class="room-img" style="background-image: scr('c:\Users\ilika\Desktop\Project\photo\standart.png');">
+                    <img src="c:\Users\ilika\Desktop\Project\photo\econom.png" height="240" width="400">
+                    <span class="room-category">Эконом</span>
+                    
+                </div>
+                <div class="room-body">
+                    <h3 class="room-title">Economy Room</h3>
+                    <p class="room-desc">Уютный номер с базовыми удобствами для комфортного проживания.</p>
+                    <div class="room-features">
+                        <span>🛏️ 1 кровать</span>
+                        <span>📺 TV</span>
+                        <span>🚿 Душ</span>
+                    </div>
+                    <div class="room-meta">
+                        <span class="room-price">От 2,500 THB</span>
+                        <span class="room-night">/ ночь</span>
+                    </div>
+                    <a href="booking.html?service=Economy+Room" class="btn-book">Забронировать</a>
+                </div>
+            </div>
+
+            <!-- Стандарт -->
+            <div class="room-card">
+                <div class="room-img" style="background-image: scr('c:\Users\ilika\Desktop\Project\photo\standart.png');">
+                    <img src="c:\Users\ilika\Desktop\Project\photo\standart.png" height="240" width="400">
+                    <span class="room-category">Стандарт</span>
+                    
+                </div>
+                <div class="room-body">
+                    <h3 class="room-title">Standard Room</h3>
+                    <p class="room-desc">Просторный номер с балконом и видом на сад.</p>
+                    <div class="room-features">
+                        <span>🛏️ King-size</span>
+                        <span>📺 Smart TV</span>
+                        <span>🛁 Ванна</span>
+                        <span>🌿 Балкон</span>
+                    </div>
+                    <div class="room-meta">
+                        <span class="room-price">От 4,000 THB</span>
+                        <span class="room-night">/ ночь</span>
+                    </div>
+                    <a href="booking.html?service=Standard+Room" class="btn-book">Забронировать</a>
+                </div>
+            </div>
+
+            <!-- ВИП -->
+            <div class="room-card">
+                <div class="room-img" style="background-image: scr('c:\Users\ilika\Desktop\Project\photo\vip.png');">
+                    <img src="c:\Users\ilika\Desktop\Project\photo\vip.png" height="240" width="400">
+                    <span class="room-category">ВИП</span>
+                    
+                </div>
+                <div class="room-body">
+                    <h3 class="room-title">VIP Room</h3>
+                    <p class="room-desc">Улучшенный номер с панорамным видом на море и отдельной гостиной зоной.</p>
+                    <div class="room-features">
+                        <span>🛏️ King-size</span>
+                        <span>🌊 Вид на море</span>
+                        <span>🛁 Джакузи</span>
+                        <span>🛋️ Гостиная</span>
+                    </div>
+                    <div class="room-meta">
+                        <span class="room-price">От 7,000 THB</span>
+                        <span class="room-night">/ ночь</span>
+                    </div>
+                    <a href="booking.html?service=VIP+Room" class="btn-book">Забронировать</a>
+                </div>
+            </div>
+
+            <!-- Люкс -->
+            <div class="room-card">
+                <div class="room-img" style="background-image: scr('c:\Users\ilika\Desktop\Project\photo\luxs.png');">
+                    <img src="c:\Users\ilika\Desktop\Project\photo\luxs.png" height="240" width="400">
+                    <span class="room-category">Люкс</span>
+                </div>
+                <div class="room-body">
+                    <h3 class="room-title">Luxury Suite</h3>
+                    <p class="room-desc">Роскошный двухкомнатный номер с персональным обслуживанием.</p>
+                    <div class="room-features">
+                        <span>🛏️ 2 спальни</span>
+                        <span>🌊 Панорама</span>
+                        <span>🏊 Приватный бассейн</span>
+                        <span>🍾 Мини-бар</span>
+                    </div>
+                    <div class="room-meta">
+                        <span class="room-price">От 15,000 THB</span>
+                        <span class="room-night">/ ночь</span>
+                    </div>
+                    <a href="booking.html?service=Luxury+Suite" class="btn-book">Забронировать</a>
+                </div>
+            </div>
+
+            <!-- Президентский -->
+            <div class="room-card">
+                <div class="room-img" style="background-image: scr('c:\Users\ilika\Desktop\Project\photo\president.png');">
+                    <img src="c:\Users\ilika\Desktop\Project\photo\president.png" height="240" width="400">
+                    <span class="room-category president">Президентский</span>
+                </div>
+                <div class="room-body">
+                    <h3 class="room-title">Presidential Suite</h3>
+                    <p class="room-desc">Эксклюзивный пентхаус с полным спектром премиальных услуг и личным дворецким.</p>
+                    <div class="room-features">
+                        <span>🛏️ 3 спальни</span>
+                        <span>🌊 360° вид</span>
+                        <span>🏊 Инфинити-бассейн</span>
+                        <span>🤵 Дворецкий 24/7</span>
+                    </div>
+                    <div class="room-meta">
+                        <span class="room-price">От 35,000 THB</span>
+                        <span class="room-night">/ ночь</span>
+                    </div>
+                    <a href="booking.html?service=Presidential+Suite" class="btn-book">Забронировать</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+    <!-- ФУТЕР -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>Mövenpick Na Jomtien</h4>
+                    <p>Пятизвёздочный отель на побережье Паттайи. Изысканный сервис, безупречный вкус и атмосфера абсолютного комфорта.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Навигация</h4>
+                    <ul>
+                        <li><a href="#home">Главная</a></li>
+                        <li><a href="#services">Услуги</a></li>
+                        <li><a href="booking.html">Бронирование</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col footer-contact">
+                    <h4>Контакты</h4>
+                    <p>📍 Na Jomtien, Pattaya, Thailand</p>
+                    <p>📞 +66 38 123 456</p>
+                    <p>✉️ info@movenpick-pattaya.com</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Услуги</h4>
+                    <ul>
+                        <li><a href="#services">BBQ Dinner</a></li>
+                        <li><a href="#services">SPA Relax</a></li>
+                        <li><a href="#services">Airport Transfer</a></li>
+                        <li><a href="#services">Все услуги</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Mövenpick Na Jomtien Siam Pattaya. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+<script>
+    // ===== АДАПТАЦИЯ ДЛЯ МОБИЛЬНЫХ УСТРОЙСТВ =====
+    
+    // Функция для определения типа устройства
+    function isMobile() {
+        return window.innerWidth <= 768;
+    }
+    
+    function isTablet() {
+        return window.innerWidth > 768 && window.innerWidth <= 1024;
+    }
+
+    // Обновление фото на главном экране под размер экрана
+    function updateHeroImage() {
+        const heroImage = document.querySelector('.hero-bg-image');
+        
+        if (!heroImage) return;
+        
+        // Разные фото под разные размеры экрана
+        const images = {
+            mobile: 'https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=600&auto=format&fit=crop',
+            tablet: 'https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=1024&auto=format&fit=crop',
+            desktop: 'https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=1920&auto=format&fit=crop'
+        };
+        
+        if (isMobile()) {
+            heroImage.src = images.mobile;
+            heroImage.style.objectPosition = 'center 40%';
+        } else if (isTablet()) {
+            heroImage.src = images.tablet;
+            heroImage.style.objectPosition = 'center 35%';
+        } else {
+            heroImage.src = images.desktop;
+            heroImage.style.objectPosition = 'center 35%';
+        }
+    }
+
+    // Обновление высоты главного экрана
+    function updateHeroHeight() {
+        const hero = document.querySelector('.hero');
+        if (!hero) return;
+        
+        if (isMobile()) {
+            hero.style.minHeight = '85vh';
+        } else if (isTablet()) {
+            hero.style.minHeight = '90vh';
+        } else {
+            hero.style.minHeight = '100vh';
+        }
+    }
+
+    // Обновление размеров шрифтов
+    function updateTypography() {
+        const hotelName = document.querySelector('.hotel-name');
+        const welcomeText = document.querySelector('.welcome-text');
+        const shortDesc = document.querySelector('.short-desc');
+        const btnView = document.querySelector('.btn-view');
+        
+        if (isMobile()) {
+            if (hotelName) hotelName.style.fontSize = '2rem';
+            if (welcomeText) welcomeText.style.fontSize = '1.2rem';
+            if (shortDesc) {
+                shortDesc.style.fontSize = '0.9rem';
+                shortDesc.style.padding = '0.8rem 1.2rem';
+            }
+            if (btnView) {
+                btnView.style.fontSize = '1rem';
+                btnView.style.padding = '0.8rem 2rem';
+            }
+        } else if (isTablet()) {
+            if (hotelName) hotelName.style.fontSize = '3rem';
+            if (welcomeText) welcomeText.style.fontSize = '1.4rem';
+            if (shortDesc) {
+                shortDesc.style.fontSize = '1.1rem';
+                shortDesc.style.padding = '1.1rem 1.8rem';
+            }
+            if (btnView) {
+                btnView.style.fontSize = '1.05rem';
+                btnView.style.padding = '0.9rem 2.5rem';
+            }
+        } else {
+            if (hotelName) hotelName.style.fontSize = '';
+            if (welcomeText) welcomeText.style.fontSize = '';
+            if (shortDesc) {
+                shortDesc.style.fontSize = '';
+                shortDesc.style.padding = '';
+            }
+            if (btnView) {
+                btnView.style.fontSize = '';
+                btnView.style.padding = '';
+            }
+        }
+    }
+
+    // Обновление отступов навигации
+    function updateNavbar() {
+        const navLogo = document.querySelector('.nav-logo');
+        const navLinks = document.querySelector('.nav-links');
+        
+        if (isMobile()) {
+            if (navLogo) navLogo.style.fontSize = '1.1rem';
+            if (navLinks) {
+                navLinks.style.gap = '0.8rem';
+            }
+        } else {
+            if (navLogo) navLogo.style.fontSize = '';
+            if (navLinks) {
+                navLinks.style.gap = '';
+            }
+        }
+    }
+
+    // Обновление карточек (колонки)
+    function updateGridLayout() {
+        const roomsGrid = document.querySelector('.rooms-grid');
+        const servicesGrid = document.querySelector('.services-grid');
+        
+        if (isMobile()) {
+            if (roomsGrid) {
+                roomsGrid.style.gridTemplateColumns = '1fr';
+                roomsGrid.style.gap = '20px';
+            }
+            if (servicesGrid) {
+                servicesGrid.style.gridTemplateColumns = '1fr';
+                servicesGrid.style.gap = '20px';
+            }
+        } else {
+            if (roomsGrid) {
+                roomsGrid.style.gridTemplateColumns = '';
+                roomsGrid.style.gap = '';
+            }
+            if (servicesGrid) {
+                servicesGrid.style.gridTemplateColumns = '';
+                servicesGrid.style.gap = '';
+            }
+        }
+    }
+
+    // Обновление размеров карточек номеров
+    function updateRoomCards() {
+        const roomImages = document.querySelectorAll('.room-img');
+        const roomTitles = document.querySelectorAll('.room-title');
+        const roomBodies = document.querySelectorAll('.room-body');
+        
+        if (isMobile()) {
+            roomImages.forEach(img => {
+                img.style.height = '180px';
+            });
+            roomTitles.forEach(title => {
+                title.style.fontSize = '1.3rem';
+            });
+            roomBodies.forEach(body => {
+                body.style.padding = '1.4rem 1.2rem 1.4rem';
+            });
+        } else {
+            roomImages.forEach(img => {
+                img.style.height = '';
+            });
+            roomTitles.forEach(title => {
+                title.style.fontSize = '';
+            });
+            roomBodies.forEach(body => {
+                body.style.padding = '';
+            });
+        }
+    }
+
+    // Обновление футера
+    function updateFooter() {
+        const footerGrid = document.querySelector('.footer-grid');
+        const footerBottom = document.querySelector('.footer-bottom');
+        
+        if (!footerGrid) return;
+        
+        if (isMobile()) {
+            footerGrid.style.gridTemplateColumns = '1fr';
+            footerGrid.style.gap = '2rem';
+            if (footerBottom) {
+                footerBottom.style.fontSize = '0.8rem';
+            }
+        } else {
+            footerGrid.style.gridTemplateColumns = '';
+            footerGrid.style.gap = '';
+            if (footerBottom) {
+                footerBottom.style.fontSize = '';
+            }
+        }
+    }
+
+    // Главная функция обновления всего
+    function updateAllForDevice() {
+        updateHeroImage();
+        updateHeroHeight();
+        updateTypography();
+        updateNavbar();
+        updateGridLayout();
+        updateRoomCards();
+        updateFooter();
+    }
+
+    // ===== ПЛАВНАЯ АНИМАЦИЯ ПОЯВЛЕНИЯ КАРТОЧЕК =====
+    const observerOptions = {
+        threshold: 0.15,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, observerOptions);
+
+    // Наблюдаем все карточки (номера + услуги)
+    document.querySelectorAll('.room-card, .service-card').forEach(card => {
+        observer.observe(card);
+    });
+
+    // ===== ИЗМЕНЕНИЕ НАВИГАЦИИ ПРИ СКРОЛЛЕ =====
+    window.addEventListener('scroll', () => {
+        const navbar = document.getElementById('navbar');
+        if (navbar) {
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        }
+
+        const sections = document.querySelectorAll('section');
+        const navLinks = document.querySelectorAll('.nav-links a:not(.btn-book-nav)');
+        
+        let current = '';
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop - 100;
+            if (window.scrollY >= sectionTop) {
+                current = section.getAttribute('id');
+            }
+        });
+
+        navLinks.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href') === '#' + current) {
+                link.classList.add('active');
+            }
+        });
+    });
+
+    // Запуск адаптации при загрузке
+    updateAllForDevice();
+
+    // Отслеживание изменения размера окна
+    let resizeTimer;
+    window.addEventListener('resize', () => {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(() => {
+            updateAllForDevice();
+        }, 250);
+    });
+
+    // Отслеживание поворота устройства
+    window.addEventListener('orientationchange', () => {
+        setTimeout(updateAllForDevice, 300);
+    });
+    // ===== УПРАВЛЕНИЕ ВИДЕО НА ГЛАВНОМ ЭКРАНЕ =====
+function updateHeroVideo() {
+    const desktopVideo = document.querySelector('.hero-video-desktop');
+    const mobileVideo = document.querySelector('.hero-video-mobile');
+    
+    if (!desktopVideo || !mobileVideo) return;
+    
+    if (window.innerWidth <= 768) {
+        // Мобильное видео
+        desktopVideo.pause();
+        mobileVideo.play().catch(() => {
+            console.log('Автовоспроизведение видео заблокировано');
+        });
+    } else {
+        // Десктопное видео
+        mobileVideo.pause();
+        desktopVideo.play().catch(() => {
+            console.log('Автовоспроизведение видео заблокировано');
+        });
+    }
+}
+
+// Запуск при загрузке
+updateHeroVideo();
+
+// При изменении размера окна
+let videoResizeTimer;
+window.addEventListener('resize', () => {
+    clearTimeout(videoResizeTimer);
+    videoResizeTimer = setTimeout(updateHeroVideo, 500);
+});
+</script>
+</body>
+</html>
